@@ -4,6 +4,10 @@ This document proposes application that is a desktop (or potentially web) applic
 TODO: add screenshot of running project here
 
 ![This is a screenshot.](images.png)
+
+# Initial Project Proposal:
+[https://github.com/cis3296f23/projectfeedbackboards-section-001-m-w-11am/issues/9]([https://github.com/cis3296f23/projectfeedbackboards-section-001-m-w-11am/issues/9])
+
 # How to run
 Provide here instructions on how to use your application.   
 - Download the latest binary from the Release section on the right on GitHub.  
