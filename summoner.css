@@ -1,0 +1,56 @@
+.summoner {
+  /* Styling for the container */
+  background-color: #1a2f8d;
+  border: 1px solid #2e1292;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.summoner h2 {
+  /* Styling for heading elements within the "summoner" class */
+  font-size: 24px;
+  color: #67a8c7;
+}
+
+.summoner p {
+  /* Styling for paragraph elements within the "summoner" class */
+  font-size: 16px;
+  color: #67a8c7;
+  margin: 5px 0;
+}
+
+.summoner a {
+  /* Styling for anchor (link) elements within the "summoner" class */
+  text-decoration: none;
+  color: #0078d4;
+}
+
+.summoner a:hover {
+  /* Styling for anchor elements on hover */
+  text-decoration: underline;
+}
+
+.summoner .avatar {
+  /* Styling for an element with the class "avatar" within the "summoner" class */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.summoner button {
+  /* Styling for button elements within the "summoner" class */
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.summoner button:hover {
+  /* Styling for button elements on hover */
+  background-color: #005a9e;
+}
+
+/* You can add more styles as needed for your specific use case */

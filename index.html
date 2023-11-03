@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+    <!--
+
+        <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://unpkg.com"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://unpkg.com"
+    />
+    -->
+
+    <script src="getSummoner.js"></script>
+    <!-- React dependencies via CDNs -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel for JSX compilation -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <!-- Styling-->
+    <link rel="stylesheet" type="text/css" href="summoner.css" />
+
+    <title>OpenOverlay</title>
+  </head>
+  <body>
+    <div id="root">
+      <p>Summoner Name</p>
+      <script src="OpenOverlay.js"></script>
+    </div>
+  </body>
+</html>
