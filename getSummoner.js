@@ -1,7 +1,7 @@
 const { Kayn, REGIONS } = require("kayn");
 require("dotenv").config();
 
-function getSummoner({ summonerName = "GreenHam09" }) {
+function getSummoner({ summonerName = "Topfiish" }) {
   var div = document.createElement("div");
   div.classList.add("summoner");
   var summonerNameHeader = document.createElement("h2");
