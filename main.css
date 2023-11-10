@@ -1,0 +1,55 @@
+/* Define the primary color */
+:root {
+  --primary-color: #3498db;
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: #404b6c; /* Light gray background */
+  color: #acb9c6; /* Dark text color */
+  margin: 0;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #ffffff; /* White text color on the header */
+  padding: 1em;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color); /* Use the primary color for headings */
+}
+
+a {
+  color: var(--primary-color); /* Use the primary color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Darken the color on hover */
+}
+
+/* You can add more styles and customize as needed */
