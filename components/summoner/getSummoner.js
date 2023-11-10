@@ -1,6 +1,6 @@
 const { Kayn, REGIONS } = require("kayn");
 //require("dotenv").config();
-const config = require("../../data/config.json");
+const config = require("./data/config.json");
 
 function getSummoner({ summonerName = "Topfiish" }) {
   var div = document.createElement("div");
