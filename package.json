@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "electron": "^27.0.4",
-    "kayn": "^0.10.2"
+    "electron-builder": "^24.6.4"
   },
   "name": "open-overlay",
   "description": "This document proposes application that is a desktop (or potentially web) application that is a companion to the popular video game League of Legends. League of Legends is a complicated game that relies heavily on knowledge of its mechanics as a form of skill expression, thus many applications exist as supplements to provide information to players. However, many of these apps are monetized by showing ads or potentially by selling user data. Thus, I intend to create an open source program that provides a visual user interface that aids player decision making at the start of the game by relying on data provided by Riot Games through public APIs.",
@@ -57,6 +57,7 @@
     "json-schema-traverse": "^0.4.1",
     "json-stringify-safe": "^5.0.1",
     "jsprim": "^1.4.2",
+    "kayn": "^0.10.2",
     "kind-of": "^6.0.3",
     "load-json-file": "^2.0.0",
     "locate-path": "^2.0.0",
@@ -118,7 +119,27 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.hamsandwich.openoverlay",
+    "productName": "OpenOverlay",
+    "directories": {
+      "output": "dist"
+    },
+    "extraFiles": [
+      "data/**/*"
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "mac": {
+      "target": "dmg"
+    }
   },
   "repository": {
     "type": "git",
