@@ -9,9 +9,6 @@ body {
   color: #acb9c6; /* Dark text color */
   margin: 0;
 }
-#root {
-  padding: 1em;
-}
 
 header {
   background-color: var(--primary-color);
