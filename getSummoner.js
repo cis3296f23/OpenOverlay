@@ -1,5 +1,6 @@
 const { Kayn, REGIONS } = require("kayn");
-require("dotenv").config();
+//require("dotenv").config();
+const config = require("./data/config.json");
 
 function getSummoner({ summonerName = "GreenHam09" }) {
   var div = document.createElement("div");
@@ -8,12 +9,22 @@ function getSummoner({ summonerName = "GreenHam09" }) {
   summonerNameHeader.innerHTML = summonerName;
   div.appendChild(summonerNameHeader);
 
-  var kayn = Kayn(process.env.API_KEY)();
+  try {
+    //var kayn = Kayn(process.env.API_KEY)();
+    var kayn = Kayn(config["api-key"])();
+  } catch (error) {
+    var errorMessage = document.createElement("p");
+    errorMessage.innerHTML = "Could not intialize API";
+    div.appendChild(errorMessage);
+    return div;
+  }
+
   kayn.Summoner.by.name(summonerName).callback(function (err, summoner) {
-    var level = document.createElement("p");
-    level.innerHTML = summoner.summonerLevel;
-    div.appendChild(level);
+    var info = document.createElement("p");
+    info.innerHTML = summoner ? summoner.summonerLevel : "Error";
+    div.appendChild(info);
     console.log(summoner);
+    console.log(err);
   });
 
   return div;

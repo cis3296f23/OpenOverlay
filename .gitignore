@@ -1,2 +1,5 @@
 node_modules/
 .env
+dist/win-unpacked/
+dist/builder-debug.yml
+dist/builder-effective-config.yaml
