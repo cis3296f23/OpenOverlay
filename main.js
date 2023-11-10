@@ -8,6 +8,7 @@ const createWindow = () => {
     },
     width: 1600,
     height: 1200,
+    frame: false,
   });
 
   win.loadFile("index.html");
