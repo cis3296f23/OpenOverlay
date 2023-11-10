@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "electron": "^27.0.3",
+    "electron": "^27.0.4",
     "kayn": "^0.10.2"
   },
   "name": "open-overlay",
