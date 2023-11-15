@@ -12,3 +12,8 @@ root.appendChild(summonerInfo);
 getRank({}, function(rankContainer) {
     root.appendChild(rankContainer);
 });
+
+// Summoner Rank Flex
+getRankFlex({}, function(rankContainer) {
+    root.appendChild(rankContainer);
+});
