@@ -1,8 +1,19 @@
 var root = document.getElementById("root");
-var summonerInfo = getSummoner({});
+
+// Title Bar
 var titlebar = titlebar({ title: "Open Overlay" });
 root.appendChild(titlebar);
-var summonerNameDiv = document.createElement("p");
-summonerNameDiv.innerHTML = "Summoner Name: ";
-root.appendChild(summonerNameDiv);
+
+// Summoner Information
+var summonerInfo = getSummoner({});
 root.appendChild(summonerInfo);
+
+// Summoner Rank
+getRank({}, function(rankContainer) {
+    root.appendChild(rankContainer);
+});
+
+// Summoner Rank Flex
+getRankFlex({}, function(rankContainer) {
+    root.appendChild(rankContainer);
+});
