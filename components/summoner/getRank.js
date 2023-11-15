@@ -1,9 +1,7 @@
 const { Kayn, REGIONS } = require("kayn");
 const config = require("./data/config.json");
 
-const summonerName = 'SummonerName';
-
-function getRank({summonerName}) {
+function getRank({summonerName = 'Xzefra'}) {
     var div = document.createElement("div");
     div.classList.add("rank-info");
     var RankNameHeader = document.createElement("h2");
