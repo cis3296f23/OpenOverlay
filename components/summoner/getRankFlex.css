@@ -1,0 +1,17 @@
+.rank-info {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .rank-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .rank-info p {
+    margin: 0;
+  }
+  
