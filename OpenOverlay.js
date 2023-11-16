@@ -10,10 +10,10 @@ root.appendChild(summonerInfo);
 
 // Summoner Rank
 getRank({}, function(rankContainer) {
-    root.appendChild(rankContainer);
+    summonerInfo.appendChild(rankContainer);
 });
 
 // Summoner Rank Flex
 getRankFlex({}, function(rankContainer) {
-    root.appendChild(rankContainer);
+    summonerInfo.appendChild(rankContainer);
 });
