@@ -22,6 +22,7 @@ function getSummoner({ summonerName = "Topfiish" }) {
   kayn.Summoner.by.name(summonerName).callback(function (err, summoner) {
     var info = document.createElement("p");
     info.innerHTML = summoner ? summoner.summonerLevel : "Error";
+    info.id = "level";
     div.appendChild(info);
     console.log(summoner);
     console.log(err);
