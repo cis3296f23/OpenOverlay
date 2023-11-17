@@ -1,18 +1,30 @@
 var leagueConnect = require("league-connect");
 
-async function main() {
+async function add_new_runepage(newRuneSet) {
   const credentials = await leagueConnect.authenticate();
-  const session = await leagueConnect.createHttpSession(credentials);
-  const response = await leagueConnect.createHttp2Request(
+  const current_runes = await leagueConnect.createHttp1Request(
     {
       method: "GET",
       url: "/lol-perks/v1/currentpage",
     },
-    session,
     credentials
   );
-  console.log(response.text());
-  session.close();
+  var current_runes_JSON = current_runes.json();
+  var id_to_delete = current_runes_JSON.id;
+  console.log(id_to_delete);
+  const delete_response = await leagueConnect.createHttp1Request(
+    {
+      method: "DELETE",
+      url: "/lol-perks/v1/pages/" + id_to_delete,
+    },
+    credentials
+  );
+  const post_runes = await leagueConnect.createHttp1Request(
+    {
+      method: "POST",
+      url: "lol-perks/v1/pages",
+      body: newRuneSet,
+    },
+    credentials
+  );
 }
-
-main();
