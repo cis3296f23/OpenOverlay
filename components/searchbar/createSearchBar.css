@@ -1,0 +1,42 @@
+/* Style for the search container */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Style for the search input */
+#searchInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none; /* Remove the default input focus outline */
+    transition: border-color 0.3s ease; /* Add a smooth transition for border color */
+}
+
+/* Style for the search button */
+button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+}
+
+/* Hover effect for the search button */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the search input on focus */
+#searchInput:focus {
+    border-color: #0056b3; /* Change border color on input focus */
+}
