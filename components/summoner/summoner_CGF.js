@@ -7,7 +7,7 @@ function summoner_CGF(summonerName) {
         summonerInfoDiv.appendChild(rankContainer);
     });
 
-    getRankFlex({}, function(rankContainer) {
+    getRankFlex({summonerName: summonerName}, function(rankContainer) {
         summonerInfoDiv.appendChild(rankContainer);
     });
 
