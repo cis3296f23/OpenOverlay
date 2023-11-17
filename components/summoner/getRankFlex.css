@@ -1,9 +1,10 @@
 .rank-info {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #af5d5d;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 20px;
+    display: inline-flex;
+    margin-left: 5%;
   }
   
   .rank-info h2 {

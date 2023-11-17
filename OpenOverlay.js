@@ -25,3 +25,4 @@ root.appendChild(searchBar);
 //getRankFlex({}, function(rankContainer) {
 //    root.appendChild(rankContainer);
 //});
+

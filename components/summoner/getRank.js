@@ -26,14 +26,18 @@ function getRank({summonerName = 'Topfiish'}, callback) {
 
       // Create a paragraph element to display the rank
       var rankInfoParagraph = document.createElement("p");
-
+      var soloRankImage = document.createElement("img");
+      soloRankImage.setAttribute("align","center");
       if (soloQueueEntry) {
           // If ranked information is available, display the rank
-          rankInfoParagraph.innerHTML = `Solo/Duo Queue Rank: ${soloQueueEntry.tier} ${soloQueueEntry.rank}`;
+          soloRankImage.src = "components/images/emerald.png";
+          rankInfoParagraph.innerHTML = `Solo/Duo Rank:<br>${soloQueueEntry.tier} ${soloQueueEntry.rank}`;
       } else {
           // If no ranked information is available, display a message
-          rankInfoParagraph.innerHTML = "No Solo/Duo Queue rank information available.";
+          soloRankImage.src = "components/images/unranked.png";
+          rankInfoParagraph.innerHTML = "Solo/Duo Rank:<br>UNRANKED<br>";
       }
+      rankInfoParagraph.appendChild(soloRankImage);
 
       // Append the rank information to the div
       div.appendChild(rankInfoParagraph);

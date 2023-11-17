@@ -1,29 +1,46 @@
 .summoner {
   /* Styling for the container */
-  background-color: #1a2f8d;
-  border: 1px solid #2e1292;
+  background-color: #6699ff;
+  border: 1px solid rgb(12, 26, 54);
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
 .summoner h2 {
   /* Styling for heading elements within the "summoner" class */
-  font-size: 24px;
-  color: #67a8c7;
+  font-size: 36px;
+  color: #122b36;
+  padding:20px;
+  display:flex;
+  justify-content: space-between;
+}
+
+#level {
+  display: block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 30px;
+  background-color: rgb(0, 128, 98);
+  border: solid black 3px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .summoner p {
   /* Styling for paragraph elements within the "summoner" class */
   font-size: 16px;
-  color: #67a8c7;
+  color: #122b36;
   margin: 5px 0;
 }
 
 .summoner a {
   /* Styling for anchor (link) elements within the "summoner" class */
   text-decoration: none;
-  color: #0078d4;
+  color: #122b36;
 }
 
 .summoner a:hover {
@@ -40,7 +57,7 @@
 
 .summoner button {
   /* Styling for button elements within the "summoner" class */
-  background-color: #0078d4;
+  background-color: #04111c;
   color: #fff;
   border: none;
   padding: 10px 20px;
