@@ -4,6 +4,10 @@ var root = document.getElementById("root");
 var titlebar = titlebar({ title: "Open Overlay" });
 root.appendChild(titlebar);
 
+//SearchBar
+var searchBar = createSearchBar();
+root.appendChild(searchBar);
+
 // Summoner Information
 var summonerInfo = getSummoner({});
 root.appendChild(summonerInfo);
