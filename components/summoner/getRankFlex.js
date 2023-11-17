@@ -27,13 +27,18 @@ function getRankFlex({summonerName = 'Topfiish'}, callback) {
         // Create a paragraph element to display the rank
         var flexRankInfoParagraph = document.createElement("p");
   
+        var flexRankImage = document.createElement("img");
+        flexRankImage.setAttribute("align","center");
         if (flexQueueEntry) {
             // If ranked information is available, display the rank
-            flexRankInfoParagraph.innerHTML = `Flex Queue Rank: ${flexQueueEntry.tier} ${flexQueueEntry.rank}`;
+            flexRankImage.src = "components/images/emerald.png";
+            flexRankInfoParagraph.innerHTML = `Flex Rank:<br>${flexQueueEntry.tier} ${flexQueueEntry.rank}<br>`;
         } else {
             // If no ranked information is available, display a message
-            flexRankInfoParagraph.innerHTML = "No Flex Queue rank information available.";
+            flexRankImage.src = "components/images/unranked.png";
+            flexRankInfoParagraph.innerHTML = "Flex Rank:<br>UNRANKED<br>";
         }
+        flexRankInfoParagraph.appendChild(flexRankImage);
   
         // Append the rank information to the div
         div.appendChild(flexRankInfoParagraph);
