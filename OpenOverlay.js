@@ -8,16 +8,19 @@ root.appendChild(titlebar);
 var searchBar = createSearchBar();
 root.appendChild(searchBar);
 
+//CGF to test passing parameterized name
+root.appendChild(summoner_CGF("Topfiish"));
+
 // Summoner Information
-var summonerInfo = getSummoner({});
-root.appendChild(summonerInfo);
+//var summonerInfo = getSummoner({});
+//root.appendChild(summonerInfo);
 
 // Summoner Rank
-getRank({}, function(rankContainer) {
-    root.appendChild(rankContainer);
-});
+//getRank({}, function(rankContainer) {
+//    root.appendChild(rankContainer);
+//});
 
 // Summoner Rank Flex
-getRankFlex({}, function(rankContainer) {
-    root.appendChild(rankContainer);
-});
+//getRankFlex({}, function(rankContainer) {
+//    root.appendChild(rankContainer);
+//});
