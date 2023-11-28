@@ -35,3 +35,7 @@ async function get_current_runes(credentials) {
   var current_runes_JSON = current_runes.json();
   return current_runes_JSON;
 }
+module.exports = {
+  add_new_runepage,
+  get_current_runes,
+};

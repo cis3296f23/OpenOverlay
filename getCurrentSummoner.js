@@ -14,3 +14,5 @@ async function getCurrentSummonerName() {
   var currentSummoner = await getCurrentSummoner();
   return currentSummoner.displayName;
 }
+
+module.exports = getCurrentSummoner;
