@@ -26,3 +26,8 @@ root.appendChild(searchBar);
 //    root.appendChild(rankContainer);
 //});
 
+// Last 5 Ranked Games
+getLast5RankedGames({}, function(matchHistoryContainer) {
+    root.appendChild(matchHistoryContainer);
+});
+
