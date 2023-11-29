@@ -22,14 +22,14 @@ async function get_item_sets(credentials) {
   var currentSummoner = await getCurrentSummoner();
   var currentSummonerID = currentSummoner.summonerId;
 
-  const item_sets_respnse = await leagueConnect.createHttp1Request(
+  const item_sets_response = await leagueConnect.createHttp1Request(
     {
       method: "GET",
       url: `/lol-item-sets/v1/item-sets/${currentSummonerID}/sets`,
     },
     credentials
   );
-  return item_sets_respnse.json();
+  return item_sets_response.json();
 }
 module.exports = {
   get_item_sets,
