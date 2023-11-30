@@ -7,19 +7,9 @@ This document proposes application that is a desktop (or potentially web) applic
 [https://github.com/cis3296f23/projectfeedbackboards-section-001-m-w-11am/issues/9]([https://github.com/cis3296f23/projectfeedbackboards-section-001-m-w-11am/issues/9])
 
 # How to run
-Provide here instructions on how to use your application.   
-- Download the latest binary from the Release section on the right on GitHub.  
-- Follow this website to download NodeJS [https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows]([https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows])
-
-- In your terminal do
-
-```
-npm install electron
-```
-- Then you do
-```
-npm start
-```
+- Download the latest release  
+- Run OpenOverlay.version.exe file
+- Enjoy
 
 # How to contribute
 Follow this project board to know the latest status of the project: [https://github.com/orgs/cis3296f23/projects/119/views/1]([https://github.com/orgs/cis3296f23/projects/119/views/1])
@@ -30,3 +20,8 @@ Follow this project board to know the latest status of the project: [https://git
 - Use Vscode
 - Run Main Js file
 - Expect a pop up window
+
+- Multiple Components to this project:
+- Under the summoners folder we have all the conponents to gather summoner infomation
+- Images contain all the img files for out html website (index.html)
+- In searchbar folder contain all searchbar conponents
