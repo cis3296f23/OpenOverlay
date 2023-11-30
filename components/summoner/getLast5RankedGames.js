@@ -1,3 +1,7 @@
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function getLast5RankedGames({summonerName = 'LunaMoons'}, callback) {
     var div = document.createElement("div");
     div.classList.add("match-history");
@@ -41,12 +45,17 @@ async function getLast5RankedGames({summonerName = 'LunaMoons'}, callback) {
         return;
     }
 
-    var matches;
+    var matches = [];
     try {
-        const matchPromises = matchlist.matches.map((matchReference) => {
-            return kayn.Match.get(matchReference.gameId);
-        });
-        matches = await Promise.all(matchPromises);
+        // Fetch matches with delay
+        for (let i = 0; i < matchlist.matches.length; i++) {
+            const matchReference = matchlist.matches[i];
+            const match = await kayn.Match.get(matchReference.gameId);
+            matches.push(match);
+
+            // Add a delay between requests
+            await delay(1000); // 1 second delay
+        }
     } catch (error) {
         console.error("Error fetching matches:", error);
         var errorMessage = document.createElement("p");
