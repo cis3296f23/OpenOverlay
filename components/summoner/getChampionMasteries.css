@@ -1,0 +1,22 @@
+.masteryGraphContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.barGraph {
+    background-color: #f0f0f0;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.bar {
+    background-color: #4caf50;
+    height: 100%;
+}
+
+  .pieChartContainer {
+    overflow: auto; /* or overflow: scroll; */
+    width: 10px; /* Adjust the width to match the JavaScript setting */
+    height: 10px; /* Adjust the height to match the JavaScript setting */
+}

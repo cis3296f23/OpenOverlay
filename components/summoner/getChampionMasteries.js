@@ -17,14 +17,77 @@ const getChampionMasteries = async (summonerName, callback) => {
         const championIdMap = await kayn.DDragon.Champion.listDataByIdWithParentAsId();
         const masteries = await kayn.ChampionMastery.list(summoner.id);
 
-        const masteryResults = masteries.map(entry => processMastery(championIdMap, summoner.id, entry));
+        // Filter masteries for champions with level greater than 5
+        const masteryResults = masteries
+            .filter(entry => entry.championLevel > 5)
+            .map(entry => processMastery(championIdMap, summoner.id, entry));
 
-        // Display champion mastery information
-        masteryResults.forEach(mastery => {
-            const masteryInfoElement = document.createElement('p');
-            masteryInfoElement.textContent = `Champion: ${mastery.championName}, Level: ${mastery.championLevel}, Points: ${mastery.championPoints}`;
-            div.appendChild(masteryInfoElement);
+        const pieChartContainer = document.createElement('canvas');
+        pieChartContainer.classList.add('pieChartContainer');
+        div.appendChild(pieChartContainer);
+
+        // Set width and height properties for the pie chart container
+        Object.assign(pieChartContainer.style, {
+            width: '150px', // Adjust the width as needed
+            height: '150px', // Adjust the height as needed
         });
+
+        if (masteryResults.length > 0) {
+            // Function to generate an array of random colors
+            function getRandomColors(count) {
+                const colors = [];
+                for (let i = 0; i < count; i++) {
+                    const randomColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.7)`;
+                    colors.push(randomColor);
+                }
+                return colors;
+            }
+
+            // Calculate total mastery points among all champions
+            const totalMastery = masteryResults.reduce((total, data) => total + data.championPoints, 0);
+
+            // Create the pie chart
+            const ctx = pieChartContainer.getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: masteryResults.map(data => `${data.championName} - ${data.championPoints} Points`),
+                    datasets: [{
+                        data: masteryResults.map(data => data.championPoints),
+                        backgroundColor: getRandomColors(masteryResults.length),
+                        hoverOffset: 4,
+                    }],
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: (context) => {
+                                const data = masteryResults[context.index];
+                                return `${data.championName}: ${data.championPoints} Points`;
+                            },
+                        },
+                    },
+                    title: {
+                        display: true,
+                        text: `Champion Mastery Points (Level > 5) - Total: ${totalMastery}`,
+                    },
+                },
+            });
+
+            // Display total mastery points among all champions in text
+            const totalMasteryText = document.createElement('p');
+            totalMasteryText.textContent = `Total Mastery Points Among All Champions: ${totalMastery}`;
+            div.appendChild(totalMasteryText);
+        } else {
+            const noDataMessage = document.createElement('p');
+            noDataMessage.textContent = 'No Champion Masteries data available for champions with mastery level greater than 5.';
+            div.appendChild(noDataMessage);
+        }
 
         callback(div);
     } catch (error) {
