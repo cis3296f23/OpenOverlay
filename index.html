@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://ddragon.leagueoflegends.com;">
+    
     <meta
       http-equiv="X-Content-Security-Policy"
-      content="default-src 'self';"
+      content="default-src 'self'; img-src 'self' http://ddragon.leagueoflegends.com;"
     />
 
     <script src="components/searchbar/createSearchBar.js"></script>
@@ -20,6 +21,7 @@
     <script src="components/summoner/getRank.js"></script>
     <script src="components/summoner/getRankFlex.js"></script>
     <!--<script src="components/summoner/getLast5RankedGames.js"></script>-->
+    <script src="components/summoner/getProfileIcon.js"></script>
 
     <!-- Styling-->
     <link rel="stylesheet" type="text/css" href="components/summoner/summoner.css">
@@ -29,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="components/summoner/getRank.css">
     <link rel="stylesheet" type="text/css" href="components/summoner/getRankFlex.css">
     <!--<link rel="stylesheet" type="text/css" href="components/summoner/getLast5RankedGames.css">-->
+    <link rel="stylesheet" type="text/css" href="components/summoner/getProfileIcon.css">
 
     <title>OpenOverlay</title>
   </head>
