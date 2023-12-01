@@ -11,5 +11,9 @@ function summoner_CGF(summonerName) {
         summonerInfoDiv.appendChild(rankContainer);
     });
 
+    getProfileIcon({ summonerName: summonerName }, function (profileIconContainer) {
+        summonerInfoDiv.appendChild(profileIconContainer);
+      });   
+
     return summonerInfoDiv
 }
