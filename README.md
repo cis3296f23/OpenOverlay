@@ -21,7 +21,7 @@ Follow this project board to know the latest status of the project: [https://git
 - Run Main Js file
 - Expect a pop up window
 
-- Multiple Components to this project:
+### Multiple Components to this project:
 - Under the summoners folder we have all the conponents to gather summoner infomation
 - Images contain all the img files for out html website (index.html)
 - In searchbar folder contain all searchbar conponents
