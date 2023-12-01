@@ -12,7 +12,7 @@ function summoner_CGF(summonerName) {
     });
 
     getProfileIcon({ summonerName: summonerName }, function (profileIconContainer) {
-        root.appendChild(profileIconContainer);
+        summonerInfoDiv.appendChild(profileIconContainer);
       });   
 
     return summonerInfoDiv
