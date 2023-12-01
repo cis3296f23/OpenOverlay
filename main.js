@@ -11,6 +11,7 @@ const createWindow = () => {
     width: 1600,
     height: 1200,
     // frame: false, // Comment or remove this line to enable the default window frame
+    icon: 'components/images/OV_Icon.png'
   });
 
   win.loadFile("index.html");

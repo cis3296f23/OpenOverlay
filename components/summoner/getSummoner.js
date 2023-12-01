@@ -10,8 +10,8 @@ function getSummoner({ summonerName = "Topfiish" }) {
   div.appendChild(summonerNameHeader);
 
   try {
-    //var kayn = Kayn(process.env.API_KEY)();
-    var kayn = Kayn(config["api-key"])();
+    var kayn = Kayn(process.env.API_KEY)();
+    //var kayn = Kayn(config["api-key"])();
   } catch (error) {
     var errorMessage = document.createElement("p");
     errorMessage.innerHTML = "Could not intialize API";

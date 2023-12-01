@@ -13,4 +13,3 @@ root.appendChild(searchBar);
 //getLast5RankedGames({}, function(matchHistoryContainer) {
 //    root.appendChild(matchHistoryContainer);
 //});
-
