@@ -30,8 +30,30 @@ function getRank({summonerName = 'Topfiish'}, callback) {
       soloRankImage.setAttribute("align","center");
       if (soloQueueEntry) {
           // If ranked information is available, display the rank
-          soloRankImage.src = "components/images/emerald.png";
-          rankInfoParagraph.innerHTML = `Solo/Duo Rank:<br>${soloQueueEntry.tier} ${soloQueueEntry.rank}`;
+          if (soloQueueEntry.tier == "CHALLENGER"){
+            soloRankImage.src = "components/images/challenger.png";
+        } else if (soloQueueEntry.tier == "GRANDMASTER"){
+            soloRankImage.src = "components/images/grandmaster.png";
+        } else if (soloQueueEntry.tier == "MASTER"){
+            soloRankImage.src = "components/images/master.png";
+        } else if (soloQueueEntry.tier == "DIAMOND"){
+            soloRankImage.src = "components/images/diamond.png";
+        } else if (soloQueueEntry.tier == "EMERALD"){
+            soloRankImage.src = "components/images/emerald.png";
+        } else if (soloQueueEntry.tier == "PLATINUM"){
+            soloRankImage.src = "components/images/platinum.png";
+        } else if (soloQueueEntry.tier == "GOLD"){
+            soloRankImage.src = "components/images/gold.png";
+        } else if (soloQueueEntry.tier == "SILVER"){
+            soloRankImage.src = "components/images/silver.png";
+        } else if (soloQueueEntry.tier == "BRONZE"){
+            soloRankImage.src = "components/images/bronze.png";
+        } else if (soloQueueEntry.tier == "IRON"){
+            soloRankImage.src = "components/images/iron.png";
+        } else {
+            soloRankImage.src = "components/images/unranked.png";
+        }
+          rankInfoParagraph.innerHTML = `Solo/Duo Rank:<br>${soloQueueEntry.tier} ${soloQueueEntry.rank}<br>`;
       } else {
           // If no ranked information is available, display a message
           soloRankImage.src = "components/images/unranked.png";
