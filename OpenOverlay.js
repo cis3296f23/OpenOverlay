@@ -1,6 +1,5 @@
 var root = document.getElementById("root");
 var search = document.getElementById("search");
-console.log(process.env.API_KEY);
 
 // Title Bar
 var titlebar = titlebar({ title: "Open Overlay" });

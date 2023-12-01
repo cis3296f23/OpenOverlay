@@ -6,9 +6,6 @@ function getRank({ summonerName = "Topfiish" }, callback) {
   //div.appendChild(RankNameHeader);
 
   try {
-    //var kayn = Kayn(config["api-key"])();
-    console.log(process.env.API_KEY);
-    //console.log(config["api-key"]);
     var kayn = Kayn(process.env.API_KEY)();
   } catch (error) {
     var errorMessage = document.createElement("p");
