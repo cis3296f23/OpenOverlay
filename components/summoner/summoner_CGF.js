@@ -15,5 +15,10 @@ function summoner_CGF(summonerName) {
         summonerInfoDiv.appendChild(profileIconContainer);
       });   
 
+    getChampionMasteries(summonerName, function (masteryContainer) {
+        summonerInfoDiv.appendChild(masteryContainer);
+    });
+ 
+
     return summonerInfoDiv
 }
