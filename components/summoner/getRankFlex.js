@@ -35,7 +35,29 @@ function getRankFlex({ summonerName = "Topfiish" }, callback) {
       flexRankImage.setAttribute("align", "center");
       if (flexQueueEntry) {
         // If ranked information is available, display the rank
-        flexRankImage.src = "components/images/emerald.png";
+        if (flexQueueEntry.tier == "CHALLENGER") {
+          flexRankImage.src = "components/images/challenger.png";
+        } else if (flexQueueEntry.tier == "GRANDMASTER") {
+          flexRankImage.src = "components/images/grandmaster.png";
+        } else if (flexQueueEntry.tier == "MASTER") {
+          flexRankImage.src = "components/images/master.png";
+        } else if (flexQueueEntry.tier == "DIAMOND") {
+          flexRankImage.src = "components/images/diamond.png";
+        } else if (flexQueueEntry.tier == "EMERALD") {
+          flexRankImage.src = "components/images/emerald.png";
+        } else if (flexQueueEntry.tier == "PLATINUM") {
+          flexRankImage.src = "components/images/platinum.png";
+        } else if (flexQueueEntry.tier == "GOLD") {
+          flexRankImage.src = "components/images/gold.png";
+        } else if (flexQueueEntry.tier == "SILVER") {
+          flexRankImage.src = "components/images/silver.png";
+        } else if (flexQueueEntry.tier == "BRONZE") {
+          flexRankImage.src = "components/images/bronze.png";
+        } else if (flexQueueEntry.tier == "IRON") {
+          flexRankImage.src = "components/images/iron.png";
+        } else {
+          flexRankImage.src = "components/images/unranked.png";
+        }
         flexRankInfoParagraph.innerHTML = `Flex Rank:<br>${flexQueueEntry.tier} ${flexQueueEntry.rank}<br>`;
       } else {
         // If no ranked information is available, display a message
