@@ -12,7 +12,7 @@ const getChampionMasteries = async (summonerName, callback) => {
     div.classList.add('champion-masteries-info');
 
     try {
-        var kayn = Kayn(config['api-key'])();
+        var kayn = Kayn(process.env.API_KEY)();
         const summoner = await kayn.Summoner.by.name(summonerName);
         const championIdMap = await kayn.DDragon.Champion.listDataByIdWithParentAsId();
         const masteries = await kayn.ChampionMastery.list(summoner.id);
