@@ -7,6 +7,34 @@ const processMastery = (championIdMap, summonerId, masteryEntry) => {
     };
 };
 
+const getHighestMasteryChampion = async (summonerName) => {
+    try {
+        var kayn = Kayn(process.env.API_KEY)();
+        const summoner = await kayn.Summoner.by.name(summonerName);
+        const championIdMap = await kayn.DDragon.Champion.listDataByIdWithParentAsId();
+        const masteries = await kayn.ChampionMastery.list(summoner.id);
+
+        // Filter masteries for champions with level greater than 5
+        const masteryResults = masteries
+            .filter(entry => entry.championLevel > 5)
+            .map(entry => processMastery(championIdMap, summoner.id, entry));
+
+        if (masteryResults.length > 0) {
+            // Find the champion with the highest mastery points
+            const highestMasteryChampion = masteryResults.reduce((maxChampion, currentChampion) => {
+                return currentChampion.championPoints > maxChampion.championPoints ? currentChampion : maxChampion;
+            });
+
+            return highestMasteryChampion.championName;
+        } else {
+            return 'No Champion Masteries data available.';
+        }
+    } catch (error) {
+        console.error('Error fetching highest mastery champion:', error);
+        return 'Error fetching highest mastery champion.';
+    }
+};
+
 const getChampionMasteries = async (summonerName, callback) => {
     var div = document.createElement('div');
     div.classList.add('champion-masteries-info');

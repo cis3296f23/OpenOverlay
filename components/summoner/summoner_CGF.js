@@ -20,6 +20,8 @@ function summoner_CGF(summonerName) {
         summonerInfoDiv.appendChild(masteryContainer);
     });
 
+    console.log("Highest Mastery Champ:" + getHighestMasteryChampion(summonerName));
+
     var championDetailsContainer = document.createElement('div');
     championDetailsContainer.id = 'championDetails';
 
