@@ -27,15 +27,21 @@ function fetchRuneData(url) {
 
 function buildRuneSelectorUI(runeData) {
   var containerDiv = document.createElement("div");
-  var selectCategory = document.createElement("select");
+  var selectPrimary = document.createElement("select");
+
+  // Create an empty option as the default
+  var defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.text = "Select a Rune Category"; // Display text for the default option
+  selectPrimary.appendChild(defaultOption);
 
   //console.log(runeData);
   runeData.forEach((runeCategory) => {
     var categoryOption = document.createElement("option");
     categoryOption.value = runeCategory.id;
     categoryOption.text = runeCategory.name;
-    selectCategory.appendChild(categoryOption);
+    selectPrimary.appendChild(categoryOption);
   });
-  containerDiv.appendChild(selectCategory);
+  containerDiv.appendChild(selectPrimary);
   return containerDiv;
 }
