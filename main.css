@@ -1,6 +1,7 @@
 /* Define the primary color */
 :root {
   --primary-color: #3498db;
+  overflow: scroll;
 }
 
 body {
