@@ -7,33 +7,51 @@ const processMastery = (championIdMap, summonerId, masteryEntry) => {
     };
 };
 
-const getHighestMasteryChampion = async (summonerName) => {
+function getHighestMasteryChampion(summonerName, callback) {
     try {
         var kayn = Kayn(process.env.API_KEY)();
-        const summoner = await kayn.Summoner.by.name(summonerName);
-        const championIdMap = await kayn.DDragon.Champion.listDataByIdWithParentAsId();
-        const masteries = await kayn.ChampionMastery.list(summoner.id);
+        kayn.Summoner.by.name(summonerName)
+            .then(summoner => {
+                return kayn.DDragon.Champion.listDataByIdWithParentAsId()
+                    .then(championIdMap => {
+                        return kayn.ChampionMastery.list(summoner.id)
+                            .then(masteries => {
+                                // Filter masteries for champions with level greater than 5
+                                const masteryResults = masteries
+                                    .filter(entry => entry.championLevel > 5)
+                                    .map(entry => processMastery(championIdMap, summoner.id, entry));
 
-        // Filter masteries for champions with level greater than 5
-        const masteryResults = masteries
-            .filter(entry => entry.championLevel > 5)
-            .map(entry => processMastery(championIdMap, summoner.id, entry));
+                                if (masteryResults.length > 0) {
+                                    // Find the champion with the highest mastery points
+                                    const highestMasteryChampion = masteryResults.reduce((maxChampion, currentChampion) => {
+                                        return currentChampion.championPoints > maxChampion.championPoints ? currentChampion : maxChampion;
+                                    });
 
-        if (masteryResults.length > 0) {
-            // Find the champion with the highest mastery points
-            const highestMasteryChampion = masteryResults.reduce((maxChampion, currentChampion) => {
-                return currentChampion.championPoints > maxChampion.championPoints ? currentChampion : maxChampion;
+                                    callback(highestMasteryChampion.championName);
+                                } else {
+                                    callback('No Champion Masteries data available.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching masteries:', error);
+                                callback('Error fetching masteries.');
+                            });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching champion data:', error);
+                        callback('Error fetching champion data.');
+                    });
+            })
+            .catch(error => {
+                console.error('Error fetching summoner:', error);
+                callback('Error fetching summoner.');
             });
-
-            return highestMasteryChampion.championName;
-        } else {
-            return 'No Champion Masteries data available.';
-        }
     } catch (error) {
-        console.error('Error fetching highest mastery champion:', error);
-        return 'Error fetching highest mastery champion.';
+        console.error('Error:', error);
+        callback('Error.');
     }
-};
+}
+
 
 const getChampionMasteries = async (summonerName, callback) => {
     var div = document.createElement('div');
