@@ -25,9 +25,10 @@ function summoner_CGF(summonerName) {
 
     summonerInfoDiv.appendChild(championDetailsContainer);
 
-    getChampionDetails('Ahri', championDetailsContainer);
-
- 
+    getHighestMasteryChampion(summonerName, function (highestMasteryChampion) {
+        console.log(`Champion with the highest mastery: ${highestMasteryChampion}`);
+        getChampionDetails(highestMasteryChampion, championDetailsContainer);
+    });
 
     return summonerInfoDiv
 }
