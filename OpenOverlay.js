@@ -9,6 +9,10 @@ root.appendChild(titlebar);
 var searchBar = createSearchBar(searchHandler);
 root.appendChild(searchBar);
 
+createRunePageSelector().then((result) => {
+  root.appendChild(result);
+  console.log("reached result");
+});
 // Last 5 Ranked Games
 //getLast5RankedGames({}, function(matchHistoryContainer) {
 //    root.appendChild(matchHistoryContainer);
