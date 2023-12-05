@@ -1,20 +1,19 @@
 function summoner_CGF(summonerName) {
     var summonerInfoDiv = document.createElement('div');
-    
 
-    summonerInfoDiv.appendChild(getSummoner({summonerName: summonerName}));
+    summonerInfoDiv.appendChild(getSummoner({ summonerName: summonerName }));
 
-    getRank({summonerName: summonerName}, function(rankContainer) {
+    getRank({ summonerName: summonerName }, function (rankContainer) {
         summonerInfoDiv.appendChild(rankContainer);
     });
 
-    getRankFlex({summonerName: summonerName}, function(rankContainer) {
+    getRankFlex({ summonerName: summonerName }, function (rankContainer) {
         summonerInfoDiv.appendChild(rankContainer);
     });
 
     getProfileIcon({ summonerName: summonerName }, function (profileIconContainer) {
         summonerInfoDiv.appendChild(profileIconContainer);
-      });   
+    });
 
     getChampionMasteries(summonerName, function (masteryContainer) {
         summonerInfoDiv.appendChild(masteryContainer);
@@ -30,5 +29,14 @@ function summoner_CGF(summonerName) {
         getChampionDetails(highestMasteryChampion, championDetailsContainer);
     });
 
-    return summonerInfoDiv
+    // Example usage:
+    getFreeChamp().then(gridContainer => {
+        if (gridContainer) {
+            // Append the grid container to the document body or any desired parent element
+            summonerInfoDiv.appendChild(gridContainer);
+        }
+    });
+
+
+    return summonerInfoDiv;
 }

@@ -1,0 +1,26 @@
+.free-champion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1px;
+    justify-content: center;
+}
+
+.champion-name {
+    color: white;
+    padding: 4px;
+    text-align: center;
+}
+
+/* Add these styles to your CSS */
+.champion-image {
+    width: 80px; /* Set the desired width */
+    height: 120px; /* Set the desired height */
+    border-radius: 10px; /* Add border-radius for a square appearance */
+}
+
+.champion {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
