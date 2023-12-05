@@ -15,15 +15,34 @@ async function getFreeChamp() {
         // Fetch champion list
         const championList = await kayn.DDragon.Champion.list();
 
+        // Create a parent div for the entire component
+        const componentContainer = document.createElement("div");
+        componentContainer.classList.add("free-champion-component");
+
+        // Create a title div for the free champion rotation
+        const titleDiv = document.createElement("div");
+        titleDiv.classList.add("rotation-title");
+        titleDiv.textContent = `Free Champion Rotation (${rotation.freeChampionIds.length} champions)`;
+
+        // Calculate the start and end dates dynamically based on the current date
+        const currentDate = new Date();
+        const daysUntilNextTuesday = (2 - currentDate.getDay() + 7) % 7; // Ensure the correct number of days until the next Tuesday
+        const startDate = new Date(currentDate);
+        startDate.setDate(startDate.getDate() + daysUntilNextTuesday);
+        const endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + 6);
+
+        // Format dates as "MMM D" (e.g., "Dec 5")
+        const formattedStartDate = startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        const formattedEndDate = endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+        // Add the date range to the title
+        titleDiv.textContent += ` - Available from ${formattedStartDate} to ${formattedEndDate}`;
+        componentContainer.appendChild(titleDiv);
+
         // Create a parent div for the grid
         const gridContainer = document.createElement("div");
         gridContainer.classList.add("free-champion-grid");
-
-        // Add a title for the free champion rotation
-        const titleDiv = document.createElement("div");
-        titleDiv.classList.add("rotation-title");
-        titleDiv.textContent = `Free Champion Rotation (${rotation.freeChampionIds.length} champions) - Available from ${rotation.startDate} to ${rotation.endDate}`;
-        gridContainer.appendChild(titleDiv);
 
         // Create a div for each champion name and image, and append to the grid container
         freeChampionIds.forEach(async (championId) => {
@@ -54,7 +73,10 @@ async function getFreeChamp() {
             }
         });
 
-        return gridContainer;
+        // Append the grid container to the component container
+        componentContainer.appendChild(gridContainer);
+
+        return componentContainer;
     } catch (error) {
         console.error("Error fetching free champion rotation:", error);
         return null;
