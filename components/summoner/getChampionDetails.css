@@ -1,0 +1,49 @@
+/* Basic styling for the champion details container */
+.champion-details {
+    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for individual sections within the champion details */
+.champion-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.champion-details img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.champion-details p {
+    margin-bottom: 10px;
+}
+
+/* Styling for abilities */
+.champion-details .ability {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.champion-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Additional styling for specific elements if needed */
+.champion-details .ability p {
+    margin: 5px 0;
+}
+
+.champion-details .ability:last-child {
+    margin-bottom: 0;
+}

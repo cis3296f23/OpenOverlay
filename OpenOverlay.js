@@ -1,8 +1,19 @@
 var root = document.getElementById("root");
-var summonerInfo = getSummoner({});
+var search = document.getElementById("search");
+
+// Title Bar
 var titlebar = titlebar({ title: "Open Overlay" });
 root.appendChild(titlebar);
-var summonerNameDiv = document.createElement("p");
-summonerNameDiv.innerHTML = "Summoner Name: ";
-root.appendChild(summonerNameDiv);
-root.appendChild(summonerInfo);
+
+//SearchBar
+var searchBar = createSearchBar(searchHandler);
+root.appendChild(searchBar);
+
+createRunePageSelector().then((result) => {
+  root.appendChild(result);
+  console.log("reached result");
+});
+// Last 5 Ranked Games
+//getLast5RankedGames({}, function(matchHistoryContainer) {
+//    root.appendChild(matchHistoryContainer);
+//});

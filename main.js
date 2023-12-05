@@ -1,5 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
+
 let win;
+
 const createWindow = () => {
   win = new BrowserWindow({
     webPreferences: {
@@ -8,17 +10,23 @@ const createWindow = () => {
     },
     width: 1600,
     height: 1200,
-    frame: false,
+    // frame: false, // Comment or remove this line to enable the default window frame
+    icon: 'components/images/OV_Icon.png'
   });
 
   win.loadFile("index.html");
-  win.on("closed", function () {
+
+  // Uncomment the following line if you want to keep the frameless window draggable
+  // win.webContents.on("did-finish-load", () => { win.setTitle("Your Title"); });
+
+  win.on("closed", () => {
     win = null;
   });
 };
 
 app.whenReady().then(() => {
   createWindow();
+
   ipcMain.on("close-app", () => {
     app.quit();
   });

@@ -2,29 +2,53 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' http://ddragon.leagueoflegends.com; connect-src 'self' http://ddragon.leagueoflegends.com"
+    />
+
     <meta
       http-equiv="X-Content-Security-Policy"
-      content="default-src 'self';"
+      content="default-src 'self'; img-src 'self' http://ddragon.leagueoflegends.com; connect-src 'self' http://ddragon.leagueoflegends.com"
     />
 
+    <script src="components/searchbar/createSearchBar.js"></script>
+    <script src="components/searchbar/searchHandler.js"></script>
     <script src="components/summoner/getSummoner.js"></script>
+    <script src="components/summoner/getChampionDetails.js"></script>
+    <script src="components/summoner/summoner_CGF.js"></script>
     <script src="components/titlebar/titlebar.js"></script>
     <script src="utils.js"></script>
+    <script src="components/summoner/getRank.js"></script>
+    <script src="components/summoner/getRank.js"></script>
+    <script src="components/summoner/getRankFlex.js"></script>
+    <!--<script src="components/summoner/getLast5RankedGames.js"></script>-->
+    <script src="components/summoner/getProfileIcon.js"></script>
+    <script src="components/rune_page_maker/createRunePageSelector.js"></script>
+    <script src="components/summoner/getChampionMasteries.js"></script>
+
+
 
     <!-- Styling-->
+    <link rel="stylesheet" type="text/css" href="components/summoner/summoner.css">
+    <link rel="stylesheet" type="text/css" href="components/summoner/getChampionMasteries.css">
+    <link rel="stylesheet" type="text/css" href="components/searchbar/createSearchBar.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="components/titlebar/titlebar.css">
+    <link rel="stylesheet" type="text/css" href="components/summoner/getChampionDetails.css">
+    <link rel="stylesheet" type="text/css" href="components/summoner/getRank.css">
+    <link rel="stylesheet" type="text/css" href="components/summoner/getRankFlex.css">
+    <!--<link rel="stylesheet" type="text/css" href="components/summoner/getLast5RankedGames.css">-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="components/summoner/summoner.css"
-    />
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="components/titlebar/titlebar.css"
+      href="components/summoner/getProfileIcon.css"
     />
 
     <title>OpenOverlay</title>
@@ -32,6 +56,7 @@
   <body>
     <div id="root">
       <script src="OpenOverlay.js"></script>
+      <div id="summonerInfo"></div>
     </div>
   </body>
 </html>
