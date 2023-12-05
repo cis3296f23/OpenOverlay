@@ -1,11 +1,19 @@
 /* Define the primary color */
 :root {
   --primary-color: #3498db;
+  overflow: scroll;
 }
 
 body {
   font-family: "Helvetica", sans-serif;
-  background-color: #404b6c; /* Light gray background */
+  background-image:
+    linear-gradient(to bottom, rgb(255, 255, 255, 0), rgba(0, 0, 0, 0.73)),
+    url("lol_background.jpg");
+    /* width: 80%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*background-color: #404b6c; /* Light gray background */
   color: #acb9c6; /* Dark text color */
   margin: 0;
 }
