@@ -59,6 +59,8 @@ function buildRuneSelectorUI(runeData) {
     }
     primaryStyleId = selectedValue;
     runeOptionsContainer.innerHTML = "";
+    statRunesContainer.innerHTML = "";
+    selectorList = [];
     var selectedCategory = runeData.find(
       (category) => category.id == selectedValue
     );
@@ -115,6 +117,10 @@ function buildRuneSelectorUI(runeData) {
       }
       secondaryStyleId = selectedValue;
       secondaryRuneOptionsContainer.innerHTML = "";
+      while (selectorList.length > 4) {
+        selectorList.pop();
+      }
+
       var selectedCategory = runeData.find(
         (category) => category.id == selectedValue
       );
