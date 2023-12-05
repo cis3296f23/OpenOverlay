@@ -6,9 +6,14 @@
 
 body {
   font-family: "Helvetica", sans-serif;
-  background-color: #404b6c; /* Light gray background */
-  overflow-y: auto; /* Enable vertical scrollbar */
-  height: 100%; /* Ensure the body takes up the full height of the window */
+  background-image:
+    linear-gradient(to bottom, rgb(255, 255, 255, 0), rgba(0, 0, 0, 0.73)),
+    url("lol_background.jpg");
+    /* width: 80%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*background-color: #404b6c; /* Light gray background */
   color: #acb9c6; /* Dark text color */
   margin: 0;
 }
