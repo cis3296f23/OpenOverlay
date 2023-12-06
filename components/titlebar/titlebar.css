@@ -36,6 +36,16 @@ body {
   cursor: pointer;
 }
 
+.resetCGF {
+  margin:5px;
+  background: url("home.png") repeat 0 0;
+  width: 32px;
+  height: 32px;
+}
+.resetCGF:hover{
+  opacity: 50%;
+}
+
 .minimize {
   background-color: #2ecc71;
 }
