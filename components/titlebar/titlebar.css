@@ -4,9 +4,12 @@ body {
 }
 
 .title-bar {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
   background-color: #3498db;
   color: #fff;
-  height: 30px;
+  height: 52px;
   display: flex;
   justify-content: space-between;
   padding: 5px;
