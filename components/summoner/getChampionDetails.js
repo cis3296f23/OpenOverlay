@@ -40,13 +40,13 @@ async function getChampionDetails(championName, container) {
         loreParagraph.textContent = championFullDetails.data[championDetails.id].lore ? `Lore: ${championFullDetails.data[championDetails.id].lore}` : 'Lore not available.';
         championContainer.appendChild(loreParagraph);
 
-        const statsHeader = document.createElement('h3');
-        statsHeader.textContent = 'Stats:';
-        championContainer.appendChild(statsHeader);
+        // const statsHeader = document.createElement('h3');
+        // statsHeader.textContent = 'Stats:';
+        // championContainer.appendChild(statsHeader);
 
-        const statsParagraph = document.createElement('p');
-        statsParagraph.textContent = JSON.stringify(championDetails.stats);
-        championContainer.appendChild(statsParagraph);
+        // const statsParagraph = document.createElement('p');
+        // statsParagraph.textContent = JSON.stringify(championDetails.stats);
+        // championContainer.appendChild(statsParagraph);
 
         const abilitiesHeader = document.createElement('h3');
         abilitiesHeader.textContent = 'Abilities:';
