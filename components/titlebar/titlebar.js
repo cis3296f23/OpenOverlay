@@ -16,6 +16,12 @@ function titlebar({ title = "Open Overlay" }) {
   var titleBarDiv = createDivWithClass("title-bar");
   var title = createDivWithClass("title");
   title.innerHTML = "Open Overlay";
+  
+  // Button to reset CGF
+  const buttonCGF = createDivWithClass("resetCGF");
+  buttonCGF.addEventListener("click", reset_CGF);
+  titleBarDiv.appendChild(buttonCGF);
+
   titleBarDiv.appendChild(title);
 
   var controls = createDivWithClass("controls");

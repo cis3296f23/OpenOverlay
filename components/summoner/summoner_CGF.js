@@ -40,3 +40,7 @@ function summoner_CGF(summonerName) {
 
     return summonerInfoDiv;
 }
+function reset_CGF(){
+    var resultContainer = document.getElementById('summonerInfo');
+    resultContainer.innerHTML = "";
+}

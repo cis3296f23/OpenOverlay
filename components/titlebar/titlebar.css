@@ -10,7 +10,7 @@ body {
   text-align: center;
   background-color: #3498db;
   color: #fff;
-  height: 52px;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   padding: 5px;  
@@ -34,6 +34,16 @@ body {
   margin-left: 5px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.resetCGF {
+  margin:10px;
+  background: url("home.png") repeat 0 0;
+  width: 32px;
+  height: 32px;
+}
+.resetCGF:hover{
+  opacity: 60%;
 }
 
 .minimize {

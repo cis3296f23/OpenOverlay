@@ -17,6 +17,11 @@ function createSearchBar(onSearch) {
 
     searchContainer.appendChild(searchInput);
     searchContainer.appendChild(searchButton);
+    searchContainer.addEventListener('keyup', function (event) {
+        if (event.keyCode === 13){
+            onSearch(getSearchInputValue());
+        }
+    });
 
     // Function to get the input value from the search bar
     function getSearchInputValue() {
