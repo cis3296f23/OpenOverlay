@@ -1,6 +1,7 @@
 body {
-  margin: 0;
-  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+  top: 0;
 }
 
 .title-bar {
@@ -12,7 +13,9 @@ body {
   height: 52px;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 5px;  
+  position: fixed;
+  width:100%;
 }
 
 .title {

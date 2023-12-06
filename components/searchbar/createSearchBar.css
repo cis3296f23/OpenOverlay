@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     max-width: 500px;
-    margin: 20px auto;
+    margin: auto;
+    padding-top: 60px;
 }
 
 /* Style for the search input */
