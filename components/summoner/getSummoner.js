@@ -9,6 +9,20 @@ function getSummoner({ summonerName = "Topfiish" }) {
   summonerNameHeader.innerHTML = summonerName;
   div.appendChild(summonerNameHeader);
 
+  getProfileIcon({ summonerName: summonerName }, function (profileIconContainer) {
+    profileIconContainer.id = 'summonericon';
+    summonerNameHeader.appendChild(profileIconContainer);
+  });
+
+
+  getRank({ summonerName: summonerName }, function (rankContainer) {
+    div.appendChild(rankContainer);
+  });
+
+  getRankFlex({ summonerName: summonerName }, function (rankContainer) {
+    div.appendChild(rankContainer);
+  });
+
   try {
     var kayn = Kayn(process.env.API_KEY)();
     //var kayn = Kayn(config["api-key"])();
