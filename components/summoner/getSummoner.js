@@ -12,15 +12,15 @@ function getSummoner({ summonerName = "Topfiish" }) {
   getProfileIcon({ summonerName: summonerName }, function (profileIconContainer) {
     profileIconContainer.id = 'summonericon';
     summonerNameHeader.appendChild(profileIconContainer);
-  });
 
+    getRank({ summonerName: summonerName }, function (rankContainer) {
+      div.appendChild(rankContainer);
+    
 
-  getRank({ summonerName: summonerName }, function (rankContainer) {
-    div.appendChild(rankContainer);
-  });
-
-  getRankFlex({ summonerName: summonerName }, function (rankContainer) {
-    div.appendChild(rankContainer);
+      getRankFlex({ summonerName: summonerName }, function (rankContainer) {
+        div.appendChild(rankContainer);
+      });
+    });
   });
 
   try {
