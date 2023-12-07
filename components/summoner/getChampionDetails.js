@@ -32,11 +32,11 @@ async function getChampionDetails(championName, container) {
         championImage.alt = `${championDetails.name} Image`;
         championContainer.appendChild(championImage);
 
-        const titleParagraph = document.createElement('p');
+        const titleParagraph = document.createElement('champTitle');
         titleParagraph.textContent = `Title: ${championDetails.title}`;
         championContainer.appendChild(titleParagraph);
 
-        const loreParagraph = document.createElement('p');
+        const loreParagraph = document.createElement('lore');
         loreParagraph.textContent = championFullDetails.data[championDetails.id].lore ? `Lore: ${championFullDetails.data[championDetails.id].lore}` : 'Lore not available.';
         championContainer.appendChild(loreParagraph);
 
@@ -55,7 +55,8 @@ async function getChampionDetails(championName, container) {
         if (championFullDetails.data[championDetails.id].spells && championFullDetails.data[championDetails.id].spells.length > 0) {
             championFullDetails.data[championDetails.id].spells.forEach((ability, index) => {
                 const abilityContainer = document.createElement('div');
-                abilityContainer.classList.add('ability');
+                const abilityClassName = `ability${index + 1}`;
+                abilityContainer.classList.add(abilityClassName);
 
                 const abilityName = document.createElement('p');
                 abilityName.textContent = `Ability ${index + 1}: ${ability.name}`;
