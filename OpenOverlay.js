@@ -9,6 +9,14 @@ root.appendChild(titlebar);
 var searchBar = createSearchBar(searchHandler);
 root.appendChild(searchBar);
 
+// Free Champion Rotation
+getFreeChamp().then(gridContainer => {
+  if (gridContainer) {
+      // Append the grid container to the document body or any desired parent element
+      root.appendChild(gridContainer);
+  }
+});
+
 createRunePageSelector().then((result) => {
   root.appendChild(result);
   console.log("reached result");

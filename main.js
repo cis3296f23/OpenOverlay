@@ -8,7 +8,7 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    width: 1600,
+    width: 1800,
     height: 1200,
     frame: false, // Comment or remove this line to enable the default window frame
     icon: "components/images/OO_Icon.png",
