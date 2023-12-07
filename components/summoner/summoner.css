@@ -13,8 +13,8 @@
   /* Styling for heading elements within the "summoner" class */
   font-size: 36px;
   color: #122b36;
-  padding:20px;
-  display:flex;
+  padding-right: 20px;
+  padding-left: 20px;
   justify-content: space-between;
 }
 

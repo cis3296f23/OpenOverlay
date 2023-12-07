@@ -1,10 +1,12 @@
 .rank-info {
     font-family: Arial, sans-serif;
-    background-color: #af5d5d;
+    background-color: rgb(49, 160, 172);
     border: 1px solid #ccc;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: inline-flex;
     margin-left: 5%;
+    text-align: center;
   }
   
   .rank-info h2 {
@@ -13,6 +15,7 @@
   }
   
   .rank-info p {
+    padding-top:20%;
     margin: 0;
   }
   
