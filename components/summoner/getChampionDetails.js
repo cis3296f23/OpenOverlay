@@ -24,7 +24,7 @@ async function getChampionDetails(championName, container) {
         championContainer.classList.add('champion-details');
 
         const championNameHeader = document.createElement('h2');
-        championNameHeader.textContent = championDetails.name;
+        championNameHeader.textContent = "Highest Mastery Champion : \n" + championDetails.name;
         championContainer.appendChild(championNameHeader);
 
         const championImage = document.createElement('img');
