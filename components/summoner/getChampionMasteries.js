@@ -1,3 +1,11 @@
+/**
+ * function to get champion masteries using kayn and API
+ * @param {*} championIdMap 
+ * @param {*} summonerId 
+ * @param {*} masteryEntry 
+ * @returns 
+ */
+
 const processMastery = (championIdMap, summonerId, masteryEntry) => {
     const champion = championIdMap.data[masteryEntry.championId];
     return {

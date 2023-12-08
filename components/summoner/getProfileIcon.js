@@ -1,3 +1,10 @@
+/**
+ * function to get and create element for players profile icon from API
+ * @param {*} param0 
+ * @param {*} callback 
+ * @returns 
+ */
+
 function getProfileIcon({ summonerName = "Topfiish" }, callback) {
   var div = document.createElement("div");
   div.classList.add("Profile-Icon");

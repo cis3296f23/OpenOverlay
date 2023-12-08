@@ -1,3 +1,7 @@
+/**
+ * function to create and display title bar
+ */
+
 const { ipcRenderer } = require("electron");
 
 // Function to create a div element with a specified class

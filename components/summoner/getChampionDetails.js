@@ -1,3 +1,10 @@
+/**
+ * function to get champion details using kayn to fetch the champion info from the LoL API
+ * @param {*} championName 
+ * @param {*} container 
+ * @returns 
+ */
+
 async function getChampionDetails(championName, container) {
     try {
         var kayn = Kayn(process.env.API_KEY)();

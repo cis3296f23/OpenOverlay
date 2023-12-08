@@ -1,3 +1,7 @@
+/**
+ * function to get player's summoner name from API and create an element to display it
+ */
+
 const { Kayn, REGIONS } = require("kayn");
 //require("dotenv").config();
 //const config = require("./data/config.json");

@@ -1,3 +1,9 @@
+/**
+ * function to call getter functions and append them to the div being displayed
+ * @param {*} summonerName 
+ * @returns 
+ */
+
 function summoner_CGF(summonerName) {
     var summonerInfoDiv = document.createElement('div');
     

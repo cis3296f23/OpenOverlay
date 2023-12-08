@@ -1,3 +1,8 @@
+/**
+ * javascript file to create rune page selector, fetching rune data, 
+ * building the selector UI,and creating a submit button
+ */
+
 const axios = require("axios");
 const { add_new_runepage } = require("./runes/runes.js");
 const { stat } = require("graceful-fs");
