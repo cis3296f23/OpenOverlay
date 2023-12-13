@@ -1,3 +1,9 @@
+/**
+ * function to get last 5 ranked games from specific player using kayn and API
+ * @param {*} ms 
+ * @returns 
+ */
+
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

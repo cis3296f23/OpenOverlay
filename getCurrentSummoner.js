@@ -1,3 +1,7 @@
+/**
+ * function to get current player/summoner info using an HTTP request
+ */
+
 var leagueConnect = require("league-connect");
 async function getCurrentSummoner() {
   const credentials = await leagueConnect.authenticate();

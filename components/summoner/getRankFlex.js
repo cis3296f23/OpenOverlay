@@ -1,3 +1,10 @@
+/**
+ * function to get player's rank flex from API
+ * @param {*} param0 
+ * @param {*} callback 
+ * @returns 
+ */
+
 function getRankFlex({ summonerName = "Topfiish" }, callback) {
   var div = document.createElement("div");
   div.classList.add("rank-info");

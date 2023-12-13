@@ -1,3 +1,10 @@
+/**
+ * function to get player's rank and create an element to display it from API
+ * @param {*} param0 
+ * @param {*} callback 
+ * @returns 
+ */
+
 function getRank({ summonerName = "Topfiish" }, callback) {
   var div = document.createElement("div");
   div.classList.add("rank-info");

@@ -1,4 +1,7 @@
-// Function to create and return the search bar
+/** 
+ * Function to create and return the search bar
+ */
+
 function createSearchBar(onSearch) {
     var searchContainer = document.createElement('div');
     searchContainer.classList.add('search-container');

@@ -1,3 +1,7 @@
+/**
+ * main javascript file to start the app and create a new window as well as quit the app
+ */
+
 const { app, BrowserWindow, ipcMain } = require("electron");
 
 let win;
